@@ -3,7 +3,7 @@
   <?php require('nav.php'); ?>
   <div id="page-wrap">
     <div id="content">
-      <form class="content-text" action="preview.php" method="post">  
+      <form class="content-text" action="tweak.php" method="post">  
         <textarea name="content">
           <?php 
             echo $_SESSION['content'];
