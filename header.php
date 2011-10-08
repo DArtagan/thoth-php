@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <!-- Process Content -->
@@ -19,8 +19,9 @@
 <!-- WebPutty Nav Style -->
   <link rel="stylesheet" type="text/css" href="http://www.webputty.net/css/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRi0vx8M" />
   <script type="text/javascript">(function(w,d){if(w.location!=w.parent.location||w.location.search.indexOf('__preview_css__')>-1){var t=d.createElement('script');t.type='text/javascript';t.async=true;t.src='http://www.webputty.net/js/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRi0vx8M';(d.body||d.documentElement).appendChild(t);}})(window,document);</script>
-  
-<?php
+ 
+<!-- tinyMCE -->
+  <?php
   $currentFile = $_SERVER["SCRIPT_NAME"];
   $currentFile = basename($currentFile);
   if($currentFile == 'index.php') {?>
