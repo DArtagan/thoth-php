@@ -8,11 +8,8 @@
         <?php
           $contentDelineator = '<!-- CONTENT HERE -->';
         
-          $content = stripslashes($_SESSION['content']);
-          $theStyle = file_get_contents('email_style.php');
-          $theBody = file_get_contents('email.php');
-          $theBody = str_replace($contentDelineator , $content , $theBody);
-          $theHTML = '<html><head>' . $theStyle . '</head><body>' . $theBody . '</body></html>';
+          $theHTML = file_get_contents('email.html');
+          $theHTML = str_replace($contentDelineator , $content , $theHTML);
           echo htmlentities($theHTML);
         ?>
       </div>
