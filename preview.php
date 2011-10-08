@@ -4,9 +4,9 @@
   <div id="page-wrap">
     <div id="content">
       <div class="preview">
-        <iframe src="render.php" width="100%" height="300">
-          <p>Your browser does not support iframes.</p>
-        </iframe>
+        <object data="render.php" type="text/html">
+          <p>Something is not quite right, sorry.</p>
+        </object>
       </div>
     </div>
   </div>
