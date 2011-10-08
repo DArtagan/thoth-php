@@ -4,7 +4,7 @@
  
   $content = $_SESSION['content'];
   
-  $theHTML = file_get_contents('email.php');
+  $theHTML = file_get_contents('email.html');
   $theHTML = str_replace($contentDelineator , $content, $theHTML);
   echo $theHTML;
 ?>
