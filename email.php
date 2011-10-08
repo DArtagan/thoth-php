@@ -1,3 +1,23 @@
+<html>
+
+  <head>
+    <title>CSM Alumni Association</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />  
+    <style type="text/css">
+      .content a {
+        text-decoration: none;
+        color: #B03514;
+      }
+			a:hover {
+				text-decoration: underline;
+			}
+      a:visited {
+        color: #021E7D;
+      }
+    </style>
+  </head>
+  
+  <body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" bgcolor="#dddddd">
     <table width="98%" cellspacing="0" border="0" cellpadding="0">
       <tr>
         <td valign="top">
@@ -124,3 +144,5 @@
         </td>
       </tr>
     </table>
+	</body>
+</html>
