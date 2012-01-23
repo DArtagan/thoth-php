@@ -36,16 +36,9 @@
     } else {
       $messageContent = $_SESSION['messageContent'];
     }
-
-    if($_FILES['bannerUpload']["name"] != ""){
-      $fileUploadMessage = bannerUploader('bannerUpload', 'banners/');
-    }
-    
-    if($_POST['givenTemplate']) {
-      $givenTemplate = $_POST['givenTemplate'];
-      $_SESSION['givenTemplate'] = $template;
-    } else {
-      $givenTemplate = $_SESSION['givenTemplate'];
+      
+    if($_FILES["bannerUpload"]) {
+      bannerUpload($_FILES["bannerUpload"]);
     }
   ?>
   
@@ -119,7 +112,7 @@
   <?php
   if($currentFile == 'index.php') {?>
     <!-- tinyMCE -->
-    <script type="text/javascript" src="scripts/tiny_mce/tiny_mce.js" ></script >
+    <script type="text/javascript" src="jscripts/tiny_mce/tiny_mce.js" ></script >
     <script type="text/javascript">
       tinyMCE.init({
         mode : "textareas",
@@ -141,7 +134,7 @@
     </script><?php
   } else if($currentFile == 'tweak.php') {?>
     <!-- tinyMCE -->
-    <script type="text/javascript" src="scripts/tiny_mce/tiny_mce.js" ></script >
+    <script type="text/javascript" src="jscripts/tiny_mce/tiny_mce.js" ></script >
     <script type="text/javascript">
       tinyMCE.init({
         // General options

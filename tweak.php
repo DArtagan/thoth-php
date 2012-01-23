@@ -3,13 +3,12 @@
   <?php require('nav.php'); ?>
   <div id="page-wrap">
     <div id="content">
-      <form class="content-text" action="tweak.php" method="post">  
-        <textarea name="content">
+      <form name="contentForm" class="content-text" action="tweak.php" method="post">  
+        <textarea name="messageContent">
           <?php 
-            echo $_SESSION['content'];
+            echo $_SESSION['messageContent'];
           ?>
         </textarea>
-        <input type="submit" value="Preview" />
       </form>
     </div>
   </div>

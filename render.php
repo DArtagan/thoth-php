@@ -1,10 +1,25 @@
 <?php session_start(); ?>
+<?php 
+  if($_POST['banner']) {
+    $banner = $_POST['banner'];
+    $_SESSION['banner'] = $banner;
+  } else {
+    $banner = $_SESSION['banner'];
+  }
+
+  if($_POST['messageContent']) {
+    $messageContent = stripslashes($_POST['messageContent']);
+    $_SESSION['messageContent'] = $messageContent;
+  } else {
+    $messageContent = $_SESSION['messageContent'];
+  }
+?>
 <?php
+  $bannerDelineator = '<!-- BANNER HERE -->';
   $contentDelineator = '<!-- CONTENT HERE -->';
- 
-  $content = $_SESSION['content'];
-  
-  $theHTML = file_get_contents('email.html');
-  $theHTML = str_replace($contentDelineator , $content, $theHTML);
+
+  $theHTML = file_get_contents('templates/email/template_email.html');
+  $theHTML = str_replace($bannerDelineator , $banner , $theHTML);
+  $theHTML = str_replace($contentDelineator , $messageContent , $theHTML);
   echo $theHTML;
 ?>
