@@ -110,7 +110,19 @@ function bannerUploader($file, $location) {
 /*
  * Return array of template names
  */
-function listTemplates() {
-
+function listTemplates($dir) {
+  if ($handle = opendir($dir)) {
+    $templates[0] = 0;
+    $templates = array();
+    while(false !== ($entry = readdir($handle))) {
+      if(is_dir($dir . '/' . $entry) && $entry != '..' && $entry != '.') {
+        $templates[0]++;
+        $templates[$templates[0]] = $entry;
+      }
+    }
+  }
+  closedir($handle);
+  
+  return $templates;
 }
 ?>

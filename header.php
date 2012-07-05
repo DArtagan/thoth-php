@@ -12,10 +12,12 @@
   }
 ?>
 
+<title>Thoth | <?php echo basename($currentFile); ?></title>
+
 <?php require('functions.php'); ?>
 
 <!-- Process messageContent -->
-  <?php 
+  <?php   
     if($_POST['formName']) {
       $formName = $_POST['formName'];
       $_SESSION['formName'] = $formName;
@@ -43,7 +45,7 @@
     
     if($_POST['givenTemplate']) {
       $givenTemplate = $_POST['givenTemplate'];
-      $_SESSION['givenTemplate'] = $template;
+      $_SESSION['givenTemplate'] = $givenTemplate;
     } else {
       $givenTemplate = $_SESSION['givenTemplate'];
     }
@@ -110,7 +112,8 @@
   <script language="JavaScript">
     function resize() {
       var iframe = document.getElementById("ifr");
-      iframe.height=window.frames[0].document.body.scrollHeight;
+      iframe.height=window.frames[0].document.body.scrollHeight + 20;
+      iframe.width=window.frames[0].document.body.scrollWidth;
     }
   </script>
 <?php } ?>
@@ -130,13 +133,26 @@
         height: "100%",
                 
         // Theme options - button# indicated the row# only
-        theme_advanced_buttons1 : "save,cancel,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,formatselect,|,insertdate,inserttime,|,spellchecker,advhr,|,sub,sup,|,charmap",
+        theme_advanced_buttons1 : "save,cancel,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,formatselect,|,insertdate,inserttime,|,spellchecker,advhr,|,sub,sup,|,charmap,|,2col,tablecontrols",
         theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,anchor,image,|,code,visualchars,|,cite,abbr,acronym,del,ins,attribs,|,insertlayer,moveforward,movebackward,absolute,|,link,unlink,anchor,image,cleanup,code,|,search,replace,|,blockquote",
         theme_advanced_buttons3 : "",      
         theme_advanced_toolbar_location : "top",
         theme_advanced_toolbar_align : "left",
         theme_advanced_statusbar_location : "bottom",
-        theme_advanced_resizing : true
+        theme_advanced_resizing : true,
+        setup : function(ed) {
+        // Add a custom button
+        ed.addButton('2col', {
+            title : '2 Columns',
+            image : 'img/2col.png',
+            onclick : function() {
+                // Add you own code to execute something on click
+                ed.focus();
+                ed.selection.setContent('<table style="width: 560px;" border="0" ><tbody><tr><td valign="top" style="width: 50%;">Column 1</td><td valign="top" style="width: 50%;">Column 2</td></tr></tbody></table>');
+            }
+        });
+    }
+
       });
     </script><?php
   } else if($currentFile == 'tweak.php') {?>

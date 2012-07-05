@@ -27,10 +27,10 @@
         <?php
           $bannerDelineator = '<!-- BANNER HERE -->';
           $contentDelineator = '<!-- CONTENT HERE -->';
-          $ignoreStartDelineator = '<!-- IGNORE -->';
-          $ignoreEndDelineator = '<!-- /IGNORE -->';
+          //$ignoreStartDelineator = '<!-- IGNORE -->';
+          //$ignoreEndDelineator = '<!-- /IGNORE -->';
           
-          $pattern = '/<iii>(\.+?)<\/iii>/u';
+          //$pattern = '/<iii>(\.+?)<\/iii>/u';
           
           /* The original function
           Credit to: http://www.catswhocode.com/blog/15-php-regular-expressions-for-web-developers
@@ -45,19 +45,24 @@
           }
           */
           
+          // Attempted patterns: |(<div.*</div>)|
+          
           function matchingCommentFinder( $tag, $xml ) {
             $tag = preg_quote($tag);
-            preg_match_all('|<!-- '.$tag.' --[^>]*>(.*?)<!-- /'.$tag.' -->|',
+            $pattern = "/(<!-- " . $tag . ".*?\/" . $tag . " -->)/s";
+            preg_match_all($pattern,
               $xml,
               $matches,
               PREG_PATTERN_ORDER);
-            return $matches[0];
+              //var_dump($matches);
+            return $matches;
           }
- 
-          $theHTML = file_get_contents('templates/email/template_email.html');
+
+          $theHTML = file_get_contents($givenTemplate);
           $theHTML = str_replace($bannerDelineator , $banner , $theHTML);
           $theHTML = str_replace($contentDelineator , $messageContent , $theHTML);
-          $ignore = matchingCommentFinder(IGNORE,$theHTML);
+          $ignore = matchingCommentFinder("IGNORE",$theHTML);
+          //var_dump(preg_match_all("/(<!-- IGNORE.*?\/IGNORE -->)/s",$theHTML,$out,PREG_PATTERN_ORDER));
           foreach($ignore as $ignored) {
             $theHTML = str_replace($ignored, "", $theHTML);
           }
