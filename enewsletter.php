@@ -38,7 +38,7 @@ $section = unserialize(file_get_contents($filename));
                       <td class="header-image" style="margin: 0px; padding: 0px; font-family: Georgia; font-style: italic;" bgcolor="#cc9e54" valign="top" width="600">
                       <a href="http://minesonline.net/s/840/NHindex.aspx?pgid=2006" target="_blank" style="font-size: 25px;">
                       <!-- Header Image -->
-                      <img class="header_image" alt="Colorado School of Mines Alumni Association" src="<?php echo $section["banner"]; ?>" style="border-bottom: 1px solid rgb(85, 85, 85);" vspace="15" height="113" width="600"></a></td>
+                      <img class="header_image" alt="Colorado School of Mines Alumni Association" src="<?php echo $section["banner"]; ?>" style="border-bottom: 1px solid rgb(85, 85, 85);" vspace="0" height="113" width="600"></a></td>
                     </tr>
                     <tr>
                       <td cellpadding="0" style="font-size: 0px;" bgcolor="#cc9e54" height="1" valign="top" width="600">
