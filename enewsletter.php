@@ -38,7 +38,7 @@ $section = unserialize(file_get_contents($filename));
                       <td class="header-image" style="margin: 0px; padding: 0px; font-family: Georgia; font-style: italic;" bgcolor="#cc9e54" valign="top" width="600">
                       <a href="http://minesonline.net/s/840/NHindex.aspx?pgid=2006" target="_blank" style="font-size: 25px;">
                       <!-- Header Image -->
-                      <img class="header_image" alt="Colorado School of Mines Alumni Association" style="border-bottom: 1px solid rgb(85, 85, 85);" src="https://admin.imodules.com/s/840/images/editor/enewsletter/banner_generic.jpg" height="113" width="600"></a></td>
+                      <img class="header_image" alt="Colorado School of Mines Alumni Association" src="<?php echo $section["banner"]; ?>" style="border-bottom: 1px solid rgb(85, 85, 85);" vspace="15" height="113" width="600"></a></td>
                     </tr>
                     <tr>
                       <td cellpadding="0" style="font-size: 0px;" bgcolor="#cc9e54" height="1" valign="top" width="600">
@@ -82,7 +82,7 @@ $section = unserialize(file_get_contents($filename));
                       <?php } ?>
                         <tr class="content <?php echo $section[$i]["name"]; ?>" bgcolor="#dde8ea">
                           <td class="content-image" width="150" align="center">
-                          <a href="<?php echo $section[$i]["secImageLink"]; ?>" target="_blank"><img src="<?php echo $section[$i]["secImage"]; ?>" style="border: 1px solid rgb(0, 0, 0); padding: 1px; background: none repeat scroll 0% 0% rgb(255, 255, 255);" vspace="15" width="100"></a>
+                          <a href="<?php echo $section[$i]["secImageLink"]; ?>" target="_blank"><img src="<?php echo $section[$i]["secImage"]; ?>" style="border: 1px solid rgb(0, 0, 0); height: auto; padding: 1px; background: none repeat scroll 0% 0% rgb(255, 255, 255); width: 100px;" vspace="15" width="100"></a>
                           </td>
                           <td width="475">
                           <ul style="margin: 5px 25px 15px; padding: 0px; font-family: tahoma; font-size: 15px; list-style-type: circle;">
