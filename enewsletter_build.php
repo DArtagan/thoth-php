@@ -2,7 +2,7 @@
   ($_POST['section']) ? $section = $_POST['section'] : $section["count"] = 1;
   
   # save it to file
-  $filename = 'enewsletter';
+  $filename = 'enewsletter.save';
   $fp = fopen($filename, 'w+') or die("I could not open $filename.");
   fwrite($fp, serialize($section));
   fclose($fp);

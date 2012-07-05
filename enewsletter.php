@@ -1,6 +1,6 @@
 <?php 
 # retrieve from file
-$filename = 'enewsletter';
+$filename = 'enewsletter.save';
 $section = unserialize(file_get_contents($filename)); 
 ?>
 
