@@ -46,6 +46,7 @@
             <?php for($j = 0; $j < $section[$i]["lines"]; $j++) { ?>
               <li>
                 <?php $lineTitle = 'line' . $j; ?>
+                <label for="<?php echo 'section[' . $i . '][' . $lineTitle . ']'; ?>"><input type="text" name="<?php echo 'section[' . $i . '][' . $lineTitle . ']'; ?>" value="<?php echo $section[$i][$lineTitle]; ?>"></label><br />
                 <label for="<?php echo 'section[' . $i . '][' . $lineTitle . ']'; ?>[text]">Line <?php echo $j + 1 . '&nbsp;'; ?>Text: <input type="text" name="<?php echo 'section[' . $i . '][' . $lineTitle . ']'; ?>[text]" value="<?php echo $section[$i][$lineTitle]["text"]; ?>"></label><br />
                 <label for="<?php echo 'section[' . $i . '][' . $lineTitle . ']'; ?>[link]">Line <?php echo $j + 1 . '&nbsp;'; ?>Link: <input type="text" name="<?php echo 'section[' . $i . '][' . $lineTitle . ']'; ?>[link]" value="<?php echo $section[$i][$lineTitle]["link"]; ?>"></label>
               </li>
